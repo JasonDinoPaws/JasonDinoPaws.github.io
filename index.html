@@ -52,7 +52,7 @@
     <script>
         function ChangeSection(Section) {
             $.getJSON("SectionData.json",function(data){
-                console.log(data);
+                console.log(data["S"+Section]);
             });
         }
         </script>
