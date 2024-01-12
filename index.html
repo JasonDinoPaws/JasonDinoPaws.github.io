@@ -52,7 +52,9 @@
     <script>
         function ChangeSection(Section) {
             $.getJSON("SectionData.json",function(data){
-                console.log(data["S"+Section]);
+                $.each(data["S"+Section], function(i, field){
+                    $("div").append(i+" "+ field);
+                });
             });
         }
         </script>
