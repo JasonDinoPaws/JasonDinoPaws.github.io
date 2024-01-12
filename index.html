@@ -52,8 +52,8 @@
     <script>
         function ChangeSection(Section) {
             $.getJSON("SectionData.json",function(data){
-                $.each(data["S"+Section], function(i){
-                    $("div").append(i);
+                $.each(data["S"+Section], function(i,feild){
+                    console.log(i,feild);
                 });
             });
         }
