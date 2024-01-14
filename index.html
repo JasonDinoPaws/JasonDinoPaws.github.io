@@ -63,14 +63,19 @@
     </div>
 
     <iframe class="MainFrame">
+        #document
+            <html>
+                <head></head>
+                <body id="IFrameBody">
+                </body>
+            </html>
     </iframe>
 
     <script>
         function ChangeSection(Section) {
             $.getJSON("websitedata/SectionData.json",function(data){
-
                 $.each(data["S"+Section], function(i,d){
-                    $("iframe").append("<"+i+" class=\"ObjectScroll\">"+d+"</"+i+">")
+                    $("IFrameBody").append("<"+i+" class=\"ObjectScroll\">"+d+"</"+i+">")
                     console.log(i,d);
                 });
             });
