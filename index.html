@@ -41,7 +41,7 @@
             overflow: auto;
         }
         .ObjectScroll {
-            position: absolute;
+            position: relative;
             width: 50%;
             height: 50px;
             border:1px solid #ccc;
@@ -55,21 +55,22 @@
     <div class="topbar">
         <font class="SiteHead" size="5" style="color: rgb(210, 182, 182)"><u>JasonDinoPaws Portfolio</u></font>
 
-        <button class="SectionButton" onclick="ChangeSection(1)"><font size="3.5">Button1</font></button>
-        <button class="SectionButton" onclick="ChangeSection(2)"><font size="3.5">Button2</font></button>
-        <button class="SectionButton" onclick="ChangeSection(3)"><font size="3.5">Button3</font></button>
-        <button class="SectionButton" onclick="ChangeSection(4)"><font size="3.5">Button4</font></button>
+        <button class="SectionButton" onclick="ChangeSection(1)"><ifont size="3.5">Button1</ifont></button>
+        <button class="SectionButton" onclick="ChangeSection(2)"><ifont size="3.5">Button2</ifont></button>
+        <button class="SectionButton" onclick="ChangeSection(3)"><ifont size="3.5">Button3</ifont></button>
+        <button class="SectionButton" onclick="ChangeSection(4)"><ifont size="3.5">Button4</ifont></button>
         
     </div>
 
-    <div class="MainFrame">
-    </div>
+    <iframe class="MainFrame">
+    </iframe>
 
     <script>
         function ChangeSection(Section) {
             $.getJSON("websitedata/SectionData.json",function(data){
+
                 $.each(data["S"+Section], function(i,d){
-                    $("MainFrame").append("<"+i+" class=\"ObjectScroll\">"+d+"</"+i+">")
+                    $("iframe").append("<"+i+" class=\"ObjectScroll\">"+d+"</"+i+">")
                     console.log(i,d);
                 });
             });
