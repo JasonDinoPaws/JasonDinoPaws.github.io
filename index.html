@@ -36,13 +36,15 @@
         .MainFrame {
             position: absolute;
             width: 100%;
-            height: auto;
-            top: 25%;
+            height: 82.5%;
+            bottom: 2.5%;
+            overflow: auto;
         }
         .ObjectScroll {
-            position: relative;
-            width: 100%;
+            position: absolute;
+            width: 50%;
             height: 50px;
+            border:1px solid #ccc;
         }
     </style>
 
@@ -60,19 +62,20 @@
         
     </div>
 
-    <frameset>
-        <frame src="websitedata/scroo.html" scrolling="yes">
-    </frameset>
+    <div class="MainFrame">
+    </div>
 
     <script>
         function ChangeSection(Section) {
             $.getJSON("websitedata/SectionData.json",function(data){
-                $.each(data["S"+Section], function(i,feild){
-                    console.log(i,feild);
+                $.each(data["S"+Section], function(i,d){
+                    $("div").append("<"+i+" class=\"ObjectScroll\">"+d+"</"+i+">")
+                    console.log(i,d);
                 });
             });
         }
-        </script>
+
+    </script>
 
 </body>
 </html>
