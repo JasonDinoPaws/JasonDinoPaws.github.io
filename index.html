@@ -55,31 +55,11 @@
         
     </div>
 
-    <div>
-        <frame class="MainFrame" scrolling="auto">
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-        </frame>
-    </div>
+    <frame src="websitedata/scrooltext.html" scrolling="auto"> </frame>
 
     <script>
         function ChangeSection(Section) {
-            $.getJSON("SectionData.json",function(data){
+            $.getJSON("websitedata/SectionData.json",function(data){
                 $.each(data["S"+Section], function(i,feild){
                     console.log(i,feild);
                 });
