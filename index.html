@@ -69,7 +69,7 @@
         function ChangeSection(Section) {
             $.getJSON("websitedata/SectionData.json",function(data){
                 $.each(data["S"+Section], function(i,d){
-                    $("div").append("<"+i+" class=\"ObjectScroll\">"+d+"</"+i+">")
+                    $("MainFrame").append("<"+i+" class=\"ObjectScroll\">"+d+"</"+i+">")
                     console.log(i,d);
                 });
             });
