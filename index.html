@@ -70,7 +70,7 @@
             })
 
             for (const child of document.getElementById('ButtonBar').children) {
-                ButtonTweens["Out"].append(child)
+                ButtonTweens["Out"].append(child.nodeName,child)
             }
 
             $.getJSON("ButtonBar.json",function(data){
