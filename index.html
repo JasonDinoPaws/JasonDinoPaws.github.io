@@ -46,7 +46,7 @@
     </div>
 
     <script>
-        function ChangeSection(Type,Pre) {
+        function ChangeSection(Type,Pre = {}) {
             document.getElementById("Location").innerHTML = ""
             Pre.append(Type);
             $.each(Pre,function(_,A){
@@ -61,7 +61,7 @@
                 console.log($("button").length);
             }); 
         }
-        ChangeSection("Menu",{})
+        ChangeSection("Menu")
     </script>
 
 </body>
