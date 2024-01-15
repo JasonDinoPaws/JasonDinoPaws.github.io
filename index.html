@@ -59,6 +59,7 @@
                 function Anim(){
                     child.style.left -= "1px"
                     child.style.right -= "1px"
+                    console.log(child,child.style.left,child.style.right)
                     requestAnimationFrame(Anim)
                 }
                 Anim()
