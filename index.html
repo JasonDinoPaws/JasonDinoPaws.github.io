@@ -38,7 +38,7 @@
     <script>
         function ChangeSection(Type) {
             $.getJSON("ButtonBar.json",function(data){
-                console.log(document.getElementById("ButtonBar").length);
+                console.log(document.getElementById("ButtonBar").getElementsByTagName('*').length);
                 $.each(data[Type], function(_,Button){
                     $("div").append("<button class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
                 });
