@@ -56,7 +56,7 @@
 
             $.getJSON("ButtonBar.json",function(data){
                 $.each(data[Type], function(_,Button){
-                    $("div").append("<button class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+(Pre+Button)+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
+                    $("div").append("<button class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
                 });
                 console.log($("button").length);
             }); 
