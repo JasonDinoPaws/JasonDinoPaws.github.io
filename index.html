@@ -19,12 +19,13 @@
             text-align: center;
         }
         .RootLocation {
-            position: relative;
-            bottom: 1%;
+            position: fixed;
+            bottom: 6.5%;
             width: 100%;
             height: 2.5%;
             opacity: 1;
             text-align: center;
+            color: aliceblue;
         }
 
         .SectionButton {
@@ -40,16 +41,16 @@
 
 <body>
 
-    <h3 class="RootLocation" id="Location"></h3>
+    <font size="3" class="RootLocation" id="Location">Portfolio</font>
     <div class="ButtonBar">
     </div>
 
     <script>
-        function ChangeSection(Type) {
-            document.getElementById("Location").innerHTML += ">"+Type
+        function ChangeSection(Type,Pre) {
+            document.getElementById("Location").innerHTML = Pre
             $.getJSON("ButtonBar.json",function(data){
                 $.each(data[Type], function(_,Button){
-                    $("div").append("<button class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
+                    $("div").append("<button class='SectionButton' onclick=\"ChangeSection(\'"+Button+","+(Pre+Button)+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
                 });
                 console.log($("button").length);
             }); 
