@@ -10,71 +10,46 @@
             background-color: rgb(43, 43, 43);
         }
         
-        .topbar {
+        .ButtonBar {
             position: fixed;
-            top: 15px;
+            bottom: 1%;
             width: 100%;
-            height: 25%;
+            height: 5%;
             opacity: 1;
             text-align: center;
         }
-        .SiteHead {
-            position: absolute;
-            width: 100%;
-            top: 0px;
-            left: 0px;
-            text-align: center;
-        }
+
         .SectionButton {
             position: relative;
             text-align: center;
-            bottom: -21.5%;
             width: 100px;
-            height: 20%;
+            height: 100%;
         }
         
-        .MainFrame {
-            position: absolute;
-            width: 100%;
-            height: 82.5%;
-            bottom: 2.5%;
-            overflow: auto;
-        }
-        .ObjectScroll {
-            position: relative;
-            width: 100%;
-            height: 50px;
-            border:1px solid #ccc;
-        }
     </style>
 
 <title>JasonDinoPaws Portfolio</title> 
 
 <body>
 
-    <div class="topbar">
-        <font class="SiteHead" size="5" style="color: rgb(210, 182, 182)"><u>JasonDinoPaws Portfolio</u></font>
-
-        <button class="SectionButton" onclick="ChangeSection(1)"><ifont size="3.5">Button1</ifont></button>
-        <button class="SectionButton" onclick="ChangeSection(2)"><ifont size="3.5">Button2</ifont></button>
-        <button class="SectionButton" onclick="ChangeSection(3)"><ifont size="3.5">Button3</ifont></button>
-        <button class="SectionButton" onclick="ChangeSection(4)"><ifont size="3.5">Button4</ifont></button> 
-    </div>
-
-    <div class="MainFrame">
-
+    <div class="ButtonBar">
+        <button class="SectionButton" onclick="ChangeSection(1)"><ifont size="3.5">Coding</ifont></button>
+        <button class="SectionButton" onclick="ChangeSection(2)"><ifont size="3.5">Modeling</ifont></button>
+        <button class="SectionButton" onclick="ChangeSection(3)"><ifont size="3.5">Art</ifont></button>
+        <button class="SectionButton" onclick="ChangeSection(4)"><ifont size="3.5">Music</ifont></button> 
     </div>
 
     <script>
-        function ChangeSection(Section) {
-            $.getJSON("websitedata/SectionData.json",function(data){
-                $.each(data["S"+Section], function(i,d){
-                    $("MainFrame").append("<"+i+" class=\"ObjectScroll\">"+d+"</"+i+">")
-                    console.log(i,d);
+        function ChangeSection(Type) {
+            $.getJSON("ButtonBar.json",function(data){
+                console.log(data[Type]);
+                $.each(data[Type], function(Button,d){
+                    $("MainFrame").append("<button class=\"SectionButton\">"+Button+"</button>")
+                    console.log(Button,d);
                 });
-            });
+            }); 
         }
-
+        ChangeSection("")
     </script>
 
 </body>
