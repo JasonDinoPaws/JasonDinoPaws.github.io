@@ -1,17 +1,29 @@
 {
-    "Coding":{
-        "Roblox":{
-            "Games":"RoGames.html",
-            "Plugins":"RoPlugins.html"
-        }
-    },
-    "Modeling":{
+    "Menu":[
+        "Coding",
+        "Modeling",
+        "Art",
+        "Music"
+    ],
+
+    "Coding":[
+        "Roblox"
+    ],
+    "Modeling":[
+
+    ],
+    "Art":[
         
-    },
-    "Art": {
+    ],
+    "Music":[
+        
+    ],
 
-    },
-    "Music": {
+    "Roblox":[
+        "Games",
+        "Plugins"
+    ],
 
-    }
+    "Games":"RoGames.html",
+    "Plugins":"RoGames.html"
 }
