@@ -52,7 +52,7 @@
             $.each(Pre.split(","),function(_,A){
                 document.getElementById("Location").innerHTML += A+">"
             })
-            document.getElementById("Location").innerHTML += "\b\b"
+            document.getElementById("Location").innerHTML += "\b\b\b"
 
             $.getJSON("ButtonBar.json",function(data){
                 $.each(data[Type], function(_,Button){
