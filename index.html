@@ -58,7 +58,7 @@
                 $.each(data[Type], function(_,Button){
                     $("div").append("<button class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
                 });
-                console.log($("button").length);
+                console.log(document.getElementById('ButtonBar').children);
             }); 
         }
         ChangeSection("Menu")
