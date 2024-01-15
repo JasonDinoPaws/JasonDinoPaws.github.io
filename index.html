@@ -17,6 +17,7 @@
             height: 5%;
             opacity: 1;
             text-align: center;
+            padding: 5px;
         }
         .RootLocation {
             position: fixed;
@@ -53,15 +54,16 @@
                 document.getElementById("Location").innerHTML += A+(P != Pre.split(",").length-1 && ">" || "")
             })
 
+            for (const child of document.getElementById('ButtonBar').children) {
+                child.remove()
+            }
+
             $.getJSON("ButtonBar.json",function(data){
                 $.each(data[Type], function(_,Button){
                     $("div").append("<button class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
                 });
             }); 
 
-            for (const child of document.getElementById('ButtonBar').children) {
-                console.log(child.tagName);
-            }
         }
         ChangeSection("Menu")
     </script>
