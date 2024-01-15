@@ -50,7 +50,7 @@
             document.getElementById("Location").innerHTML = ""
             Pre += Type+","
             $.each(Pre.split(","),function(_,A){
-                document.getElementById("Location").innerHTML += A+">"
+                document.getElementById("Location").innerHTML += (A+">")
             })
 
             $.getJSON("ButtonBar.json",function(data){
