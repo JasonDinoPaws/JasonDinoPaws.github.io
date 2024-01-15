@@ -38,6 +38,7 @@
     <script>
         function ChangeSection(Type) {
             $.getJSON("ButtonBar.json",function(data){
+                $("div").clearQueue()
                 $.each(data[Type], function(_,Button){
                     $("div").append("<button class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
                 });
