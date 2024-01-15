@@ -33,18 +33,14 @@
 <body>
 
     <div class="ButtonBar">
-        <button class="SectionButton" onclick="ChangeSection(1)"><ifont size="3.5">Coding</ifont></button>
-        <button class="SectionButton" onclick="ChangeSection(2)"><ifont size="3.5">Modeling</ifont></button>
-        <button class="SectionButton" onclick="ChangeSection(3)"><ifont size="3.5">Art</ifont></button>
-        <button class="SectionButton" onclick="ChangeSection(4)"><ifont size="3.5">Music</ifont></button> 
     </div>
 
     <script>
-        function ChangeSection(Type) {
+        function ChangeSection(Type,PreData) {
             $.getJSON("ButtonBar.json",function(data){
                 console.log(data[Type]);
                 $.each(data[Type], function(Button,d){
-                    $("MainFrame").append("<button class=\"SectionButton\">"+Button+"</button>")
+                    $("div").append("<button class='SectionButton' onclick='ChangeSection("+Button+","+PreData+")''><ifont size='3.5'>Coding</ifont></button>")
                     console.log(Button,d);
                 });
             }); 
