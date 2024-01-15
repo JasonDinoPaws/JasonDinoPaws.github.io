@@ -47,20 +47,6 @@
     </div>
 
     <script>
-        var ButtonTweens = {
-            "Up": [],
-            "Out": []
-        }
-        function ButtonTween() {
-            for (const child of ButtonTweens["Out"]){
-                child.style.left -= "5px";
-            }
-            for (const child of ButtonTweens["Up"]){
-                child.style.left -= "5px";
-            }
-            requestAnimationFrame(ButtonTween)
-        }
-        ButtonTween()
 
         function ChangeSection(Type,Pre = "Portfolio") {
             document.getElementById("Location").innerHTML = ""
@@ -70,7 +56,12 @@
             })
 
             for (const child of document.getElementById('ButtonBar').children) {
-                ButtonTweens["Out"].append(ButtonTweens["Out"].length,child)
+                function Anim(){
+                    child.style.left -= "1px"
+                    child.style.right -= "1px"
+                    requestAnimationFrame(Anim)
+                }
+                Anim()
             }
 
             $.getJSON("ButtonBar.json",function(data){
