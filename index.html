@@ -58,9 +58,8 @@
 
             for (const child of document.getElementById('ButtonBar').children) {
                 function Anim(){
-                    child.style.left -= "1px"
-                    child.style.right -= "1px"
-                    console.log(child,child.style.left,child.style.right)
+                    child.left -= "1px"
+                    console.log(child,child.style.left)
                     requestAnimationFrame(Anim)
                 }
                 Anim()
