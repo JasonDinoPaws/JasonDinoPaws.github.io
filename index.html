@@ -48,6 +48,7 @@
     <script>
         function ChangeSection(Type,Pre) {
             document.getElementById("Location").innerHTML = ""
+            Pre.append(Type)
             $.each(Pre,function(_,A){
                 document.getElementById("Location").innerHTML += A+">"
             })
