@@ -57,8 +57,8 @@
 
             for (const child of document.getElementById('ButtonBar').children) {
                 function Anim(){
-                    child.left -= "1px"
-                    console.log(child,child.left)
+                    child.style.left -= "1px"
+                    console.log(child,child.style.left)
                     requestAnimationFrame(Anim)
                 }
                 Anim()
@@ -66,7 +66,7 @@
 
             $.getJSON("ButtonBar.json",function(data){
                 $.each(data[Type], function(_,Button){
-                    $("div").append("<button class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
+                    $("div").append("<button style=\"left = 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
                 });
             }); 
 
