@@ -50,10 +50,9 @@
             document.getElementById("Location").innerHTML = ""
             Pre += ","+Type
             $.each(Pre.split(","),function(P,A){
-                document.getElementById("Location").innerHTML += A+">"
-                console.log(A,P)
+                document.getElementById("Location").innerHTML += A+(P != Pre.split(",").length && ">" || "")
+                console.log(A,P,P != Pre.split(",").length && ">" || "")
             })
-            document.getElementById("Location").innerHTML = document.getElementById("Location").innerHTM.slice(0, -1)
 
             $.getJSON("ButtonBar.json",function(data){
                 $.each(data[Type], function(_,Button){
