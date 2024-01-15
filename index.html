@@ -50,8 +50,8 @@
             document.getElementById("Location").innerHTML = ""
             Pre += ","+Type
             $.each(Pre.split(","),function(P,A){
-                document.getElementById("Location").innerHTML += A+(P != Pre.split(",").length && ">" || "")
-                console.log(A,P,P != Pre.split(",").length && ">" || "")
+                document.getElementById("Location").innerHTML += A+(P != Pre.split(",").length-1 && ">" || "")
+                console.log(A,P,P != Pre.split(",").length-1 && ">" || "")
             })
 
             $.getJSON("ButtonBar.json",function(data){
