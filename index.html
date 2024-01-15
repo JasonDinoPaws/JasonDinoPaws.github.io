@@ -47,7 +47,12 @@
 
     <script>
         function ChangeSection(Type,Pre) {
-            document.getElementById("Location").innerHTML = Pre
+            document.getElementById("Location").innerHTML = ""
+            $.each(Pre,function(_,A){
+                document.getElementById("Location").innerHTML += A+">"
+            })
+            document.getElementById("Location").innerHTML += "\b"
+
             $.getJSON("ButtonBar.json",function(data){
                 $.each(data[Type], function(_,Button){
                     $("div").append("<button class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+(Pre+Button)+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
@@ -55,7 +60,7 @@
                 console.log($("button").length);
             }); 
         }
-        ChangeSection("Menu","")
+        ChangeSection("Menu",{})
     </script>
 
 </body>
