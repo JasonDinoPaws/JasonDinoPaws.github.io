@@ -36,12 +36,10 @@
     </div>
 
     <script>
-        function ChangeSection(Type,PreData) {
+        function ChangeSection(Type) {
             $.getJSON("ButtonBar.json",function(data){
-                console.log(data[Type]);
                 $.each(data[Type], function(Button,d){
-                    $("div").append("<button class='SectionButton' onclick='ChangeSection("+Button+","+PreData+")''><ifont size='3.5'>Coding</ifont></button>")
-                    console.log(Button,d);
+                    $("div").append("<button class='SectionButton' onclick='ChangeSection("+Button+")''><ifont size='3.5'>"+Button+"</ifont></button>")
                 });
             }); 
         }
