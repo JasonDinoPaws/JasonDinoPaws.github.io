@@ -56,8 +56,8 @@
     <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
         
     <script>
-        var ButtonData
-        $.getJSON("ButtonBar.json",function(data){console.log(data); ButtonData = data;})
+        var ButtonData = {}
+        $.getJSON("ButtonBar.json",function(data){ButtonData = data;})
         console.log(ButtonData)
 
         function ChangeSection(Type,Pre = "Portfolio") {
