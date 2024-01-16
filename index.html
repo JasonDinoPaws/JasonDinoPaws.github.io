@@ -40,9 +40,7 @@
 
 <title>JasonDinoPaws Portfolio</title> 
 
-<p?PHP
-echo shell_exec("FilesToRun/TestFile.py 'Hello");
-?>
+
 
 <body>
 
@@ -53,7 +51,11 @@ echo shell_exec("FilesToRun/TestFile.py 'Hello");
 
     <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
 
-    <p id="code" src="FilesToRun/TestFile.py" rows="3"></p>
+    <p id="code" rows="3">
+        import sys
+        input=sys.argv[1]
+        print(input)
+    </p>
         
     <button id="run" onclick="evaluatePython()">Run</button>
 
