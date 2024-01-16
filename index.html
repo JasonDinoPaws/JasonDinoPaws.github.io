@@ -51,9 +51,12 @@
 
     <button id="run" onclick="runPyhton()">Run</button>
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script>
         function runPyhton(){
-            subprocess.run(["python", "FilesToRun/TestFile.py","Hello"])
+            $.ajax({
+                url: "FilesToRun/TestFile.py"
+            })
         }
 
 
