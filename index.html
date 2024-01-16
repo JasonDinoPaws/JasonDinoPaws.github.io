@@ -40,7 +40,7 @@
 
 <title>JasonDinoPaws Portfolio</title> 
 
-<?PHP
+<p?PHP
 echo shell_exec("FilesToRun/TestFile.py 'Hello");
 ?>
 
@@ -49,6 +49,13 @@ echo shell_exec("FilesToRun/TestFile.py 'Hello");
     <font size="3" class="RootLocation" id="Location">Portfolio</font>
     <div class="ButtonBar" id="ButtonBar">
     </div>
+
+
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+
+    <p id="code" src="FilesToRun/TestFile.py" rows="3"></p>
+        
+    <button id="run" onclick="evaluatePython()">Run</button>
 
     <script>
 

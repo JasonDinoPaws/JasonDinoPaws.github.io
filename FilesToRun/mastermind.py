@@ -1,6 +1,7 @@
 from sys import exit
 from random import choice
 
+
 class Game: # The Whole Game
     # All Settings that allow the game to function
     global Type,Length,Options,CAmount,Correct, OGP,Repeat, Guesses, Limit
