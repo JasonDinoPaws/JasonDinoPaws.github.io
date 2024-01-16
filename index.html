@@ -57,8 +57,9 @@
         
     <script>
         var ButtonData
-        $.getJSON("ButtonBar.json",function(data){ButtonData = data})
+        $.getJSON("ButtonBar.json",function(data){console.log(data); ButtonData = data;})
         console.log(ButtonData)
+
         function ChangeSection(Type,Pre = "Portfolio") {
             document.getElementById("Location").innerHTML = ""
             Pre += (Type != "Menu" && ","+Type || "")
