@@ -56,15 +56,17 @@
     <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
         
     <script>
-        function ChangeSection(Type,Pre = "Portfolio") {
-            document.getElementById("Location").innerHTML = ""
-            Pre += (Type != "Menu" && ","+Type || "")
-            $.each(Pre.split(","),function(P,A){
-                document.getElementById("Location").innerHTML += A+(P != Pre.split(",").length-1 && ">" || "")
-            })
+        function ChangeSection(Type,Pre = "Portfolio/",Last= "") {
+            Last = Pre
+            Pre += (Type != "Menu" && "Type"+"/" || "")
+            document.getElementById("Location").innerHTML = Pre
 
             for (const child of document.getElementById('ButtonBar').children) {
                 setTimeout(() => { child.remove(); }, .1)
+            }
+
+            if (Pre != "Portfolio/"){
+                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'\"\"\',\'"+Last+"\')\"><ifont size='3.5'>...</ifont></button>")
             }
 
             $.getJSON("ButtonBar.json",function(data){
@@ -74,8 +76,7 @@
                         Path = Path[T]
                     }
                 }
-
-                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'\"\"\',\'"+Pre+"\')\"><ifont size='3.5'>...</ifont></button>")
+                
                 if (typeof(Path) == "string"){
                     document.getElementById("MainStuff").src = "ScrollFrames/"+Path
                 }else if (typeof(Path) == "object"){
