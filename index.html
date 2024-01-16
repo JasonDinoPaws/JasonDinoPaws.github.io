@@ -15,7 +15,6 @@
             bottom: 1%;
             width: 100%;
             height: 5%;
-            opacity: 1;
             text-align: center;
             padding: 5px;
         }
@@ -24,7 +23,6 @@
             bottom: 6.5%;
             width: 100%;
             height: 2.5%;
-            opacity: 1;
             text-align: center;
             color: aliceblue;
         }
@@ -36,6 +34,12 @@
             left: 0px;
         }
         
+        .MainFrame {
+            text-align: center;
+            width: 100%;
+            height: auto;
+            bottom: 9%;
+        }
     </style>
 
 <title>JasonDinoPaws Portfolio</title> 
@@ -47,15 +51,11 @@
     <font size="3" class="RootLocation" id="Location">Portfolio</font>
     <div class="ButtonBar" id="ButtonBar">
     </div>
+
+    <iframe src="" class="MainFrame" scrolling = auto></iframe>
         
-
-    <button id="run" onclick="runPythonScript()">Run</button>
-
     <script>
-        function runPythonScript() {
-            subprocess.run(["python", "FilesToRun/TestFile.py"]);
-        }
-
+        
         function ChangeSection(Type,Pre = "Portfolio") {
             document.getElementById("Location").innerHTML = ""
             Pre += ","+Type
@@ -68,6 +68,7 @@
             }
 
             $.getJSON("ButtonBar.json",function(data){
+                console.log(data,data[Type])
                 $.each(data[Type], function(_,Button){
                     $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
                 });
