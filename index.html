@@ -55,7 +55,8 @@
     <script>
         function runPyhton(){
             $.ajax({
-                url: "FilesToRun/TestFile.py"
+                url: "FilesToRun/TestFile.py",
+                context: document.body
             })
         }
 
