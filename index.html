@@ -56,7 +56,7 @@
             })
 
             for (const child of document.getElementById('ButtonBar').children) {
-                child.remove();
+                setTimeout(() => { child.remove(); }, .25)
             }
 
             $.getJSON("ButtonBar.json",function(data){
