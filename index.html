@@ -47,17 +47,15 @@
     <font size="3" class="RootLocation" id="Location">Portfolio</font>
     <div class="ButtonBar" id="ButtonBar">
     </div>
-
-
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
-
-    <p id="code" rows="3">
-        print("Hello")
-    </p>
         
-    <button id="run" onclick="evaluatePython()">Run</button>
+
+    <button id="run" onclick="runPyhton()">Run</button>
 
     <script>
+        function runPyhton(){
+            subprocess.run(["python", "FilesToRun/TestFile.py","Hello"])
+        }
+
 
         function ChangeSection(Type,Pre = "Portfolio") {
             document.getElementById("Location").innerHTML = ""
