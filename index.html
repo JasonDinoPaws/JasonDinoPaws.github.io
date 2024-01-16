@@ -56,7 +56,7 @@
     <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
         
     <script>
-        
+        console.log($.getJSON("ButtonBar.json",function(data){return data}))
         function ChangeSection(Type,Pre = "Portfolio") {
             document.getElementById("Location").innerHTML = ""
             Pre += (Type != "Menu" && ","+Type || "")
