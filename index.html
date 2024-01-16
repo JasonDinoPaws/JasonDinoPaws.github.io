@@ -56,10 +56,6 @@
     <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
         
     <script>
-        var ButtonData = {}
-        $.getJSON("ButtonBar.json",function(data){ButtonData = data;})
-        console.log(ButtonData)
-
         function ChangeSection(Type,Pre = "Portfolio") {
             document.getElementById("Location").innerHTML = ""
             Pre += (Type != "Menu" && ","+Type || "")
@@ -71,20 +67,23 @@
                 setTimeout(() => { child.remove(); }, .1)
             }
 
-            var Path = ButtonData
-            for (const T of Pre.split(",")) {
-                if (T != "Portfolio") {
-                    Path = Path[T]
+            $.getJSON("ButtonBar.json",function(data){
+                var Path = data
+                for (const T of Pre.split(",")) {
+                    if (T != "Portfolio") {
+                        Path = Path[T]
+                    }
                 }
-            }
 
-            if (typeof(Path) == "string"){
-                document.getElementById("MainStuff").src = "ScrollFrames/"+Path
-            }else if (typeof(Path) == "object"){
-                $.each(Path, function(Button,Data){
-                    $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
-                });
-            }
+                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'\"\"\',\'"+Pre+"\')\"><ifont size='3.5'>...</ifont></button>")
+                if (typeof(Path) == "string"){
+                    document.getElementById("MainStuff").src = "ScrollFrames/"+Path
+                }else if (typeof(Path) == "object"){
+                    $.each(Path, function(Button,Data){
+                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
+                    });
+                }
+            }); 
 
         }
         ChangeSection("Menu")
