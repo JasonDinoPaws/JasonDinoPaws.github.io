@@ -49,9 +49,12 @@
     </div>
         
 
-    <button id="run" src="Java.js" onclick="runPyhton()">Run</button>
+    <button id="run" onclick="runPyhton()">Run</button>
 
     <script>
+        function runPythonScript() {
+            subprocess.run(["python", "FilesToRun/TestFile.py"]);
+        }
 
         function ChangeSection(Type,Pre = "Portfolio") {
             document.getElementById("Location").innerHTML = ""
