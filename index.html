@@ -28,7 +28,6 @@
             text-align: center;
             color: aliceblue;
         }
-
         .SectionButton {
             text-align: center;
             width: 100px;
@@ -56,7 +55,9 @@
             })
 
             for (const child of document.getElementById('ButtonBar').children) {
-                setTimeout(() => { child.remove(); }, 5)
+                setTimeout(() => {
+                    child.width -= .05%;
+                }, .1)
             }
 
             $.getJSON("ButtonBar.json",function(data){
