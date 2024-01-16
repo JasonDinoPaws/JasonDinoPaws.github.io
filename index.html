@@ -37,7 +37,7 @@
         .MainFrame {
             text-align: center;
             width: 100%;
-            height: auto;
+            height: inherit;
             bottom: 9%;
         }
     </style>
@@ -74,7 +74,7 @@
                         Path = Path[T]
                     }
                 }
-
+                console.log(Path);
                 $.each(Path, function(Button,Data){
                     $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
                 });
