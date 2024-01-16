@@ -40,6 +40,10 @@
 
 <title>JasonDinoPaws Portfolio</title> 
 
+<?PHP
+echo shell_exec("FilesToRun/TestFile.py 'Hello");
+?>
+
 <body>
 
     <font size="3" class="RootLocation" id="Location">Portfolio</font>
@@ -56,7 +60,7 @@
             })
 
             for (const child of document.getElementById('ButtonBar').children) {
-                setTimeout(() => { child.style.left = child.style.left- 500+"px"; }, .1)
+                setTimeout(() => { child.remove(); }, .1)
             }
 
             $.getJSON("ButtonBar.json",function(data){
