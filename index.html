@@ -46,7 +46,6 @@
     <div class="ButtonBar" id="ButtonBar">
     </div>
 
-
     <script>
 
         function ChangeSection(Type,Pre = "Portfolio") {
@@ -57,12 +56,7 @@
             })
 
             for (const child of document.getElementById('ButtonBar').children) {
-                function Anim(){
-                    child.style.left -= "1px"
-                    console.log(child,child.style.left)
-                    requestAnimationFrame(Anim)
-                }
-                Anim()
+                child.remove
             }
 
             $.getJSON("ButtonBar.json",function(data){
