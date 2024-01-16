@@ -49,17 +49,9 @@
     </div>
         
 
-    <button id="run" onclick="runPyhton()">Run</button>
+    <button id="run" src="Java.js" onclick="runPyhton()">Run</button>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script>
-        function runPyhton(){
-            $.ajax({
-                url: "FilesToRun/TestFile.py",
-                context: document.body
-            })
-        }
-
 
         function ChangeSection(Type,Pre = "Portfolio") {
             document.getElementById("Location").innerHTML = ""
