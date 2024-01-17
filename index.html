@@ -33,6 +33,7 @@
             width: 100px;
             height: 100%;
             left: 0px;
+            font-size: 15px;
         }
         
         .MainFrame {
@@ -67,7 +68,7 @@
 
             $.getJSON("ButtonBar.json",function(data){
                 var Path = data
-                for (const T of Pre.split(",")) {
+                for (const T of Pre.split("/")) {
                     if (T != "Portfolio") {
                         Path = Path[T]
                     }
@@ -77,7 +78,7 @@
                     document.getElementById("MainStuff").src = "ScrollFrames/"+Path
                 }else if (typeof(Path) == "object"){
                     $.each(Path, function(Button,Data){
-                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\"><ifont size='3.5'>"+Button+"</ifont></button>")
+                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\">"+Button+"</button>")
                     });
                 }
             }); 
