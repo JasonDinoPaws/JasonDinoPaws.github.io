@@ -59,13 +59,13 @@
     <script>
         function ChangeSection(Type,Pre = new Array(["Portfolio"])) {
             New = new Array(Pre.length+(Type != "Menu" && 1 || 0))
-            console.log(Pre,Pre.length)
             for (i = 0; i < Pre.length; i++){
                 New[i] = Pre[i]
             }
             if (Type != "Menu"){
                 New[Pre.length] = (Type)
             }
+            console.log(Pre,Pre.length,New)
 
             for (const child of document.getElementById('ButtonBar').children) {
                 setTimeout(() => { child.remove(); }, .1)
