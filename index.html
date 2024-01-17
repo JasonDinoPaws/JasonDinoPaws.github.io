@@ -58,7 +58,7 @@
         
     <script>
         function ChangeSection(Type,Pre = ["Portfolio"]) {
-            New = new Int16Array[Pre.length+(Type != "Menu" && 1 || 0)]
+            New = new Int16Array(Pre.length+(Type != "Menu" && 1 || 0))
             document.getElementById("Location").innerHTML += "Portfolio/"
             for (i = 0; i < Pre.length; i++){
                 New[i] = Pre[i]
