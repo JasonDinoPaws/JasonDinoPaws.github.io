@@ -58,6 +58,7 @@
 
     <script>
         function ChangeSection(Type,Pre = new Array("Portfolio")) {
+            console.log(Pre)
             New = new Array(Pre.length+(Type != "Menu" && 1 || 0))
             for (i = 0; i < Pre.length; i++){
                 New[i] = Pre[i]
