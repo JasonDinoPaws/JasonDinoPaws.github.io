@@ -57,10 +57,15 @@
     <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
         
     <script>
-        function ChangeSection(Type,Pre = "Portfolio/",Last= "") {
-            Last = Pre
-            Pre += (Type != "Menu" && "Type"+"/" || "")
-            document.getElementById("Location").innerHTML = Pre
+        function ChangeSection(Type,Pre = ["Portfolio"]) {
+            New = new Int16Array[Type != "Menu" && Pre.length+1 || 1]
+            document.getElementById("Location").innerHTML += "Portfolio/"
+            for (i = 0; i < Pre.length; i++){
+                New[i] = Pre[i]
+            }
+            if (Type != "Menu"){
+                New[Pre.length] = (Type)
+            }
 
             for (const child of document.getElementById('ButtonBar').children) {
                 setTimeout(() => { child.remove(); }, .1)
@@ -68,10 +73,10 @@
 
             $.getJSON("ButtonBar.json",function(data){
                 var Path = data
-                for (const T of Pre.split("/")) {
-                    if (T != "Portfolio") {
-                        Path = Path[T]
-                        console.log(Path)
+                for (const Par of New){
+                    if (Par != "Portfolio"){
+                        Path = Path[Par]
+                        document.getElementById("Location").innerHTML += Par+"/"
                     }
                 }
                 
@@ -79,7 +84,7 @@
                     document.getElementById("MainStuff").src = "ScrollFrames/"+Path
                 }else if (typeof(Path) == "object"){
                     $.each(Path, function(Button,Data){
-                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+Pre+"\')\">"+Button+"</button>")
+                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+New+"\')\">"+Button+"</button>")
                     });
                 }
             }); 
