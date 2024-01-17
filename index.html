@@ -59,8 +59,6 @@
     <script>
         function ChangeSection(Type,Pre = ["Portfolio"]) {
             New = new Int16Array(Pre.length+(Type != "Menu" && 1 || 0))
-            document.getElementById("Location").innerHTML += "Portfolio/"
-            console.log(New.length)
             for (i = 0; i < Pre.length; i++){
                 New[i] = Pre[i]
             }
@@ -72,12 +70,14 @@
                 setTimeout(() => { child.remove(); }, .1)
             }
 
+            document.getElementById("Location").innerHTML = ""
             $.getJSON("ButtonBar.json",function(data){
                 var Path = data
                 for (const Par of New){
+                    document.getElementById("Location").innerHTML += Par+"/"
+                    console.log(Par)
                     if (Par != "Portfolio"){
                         Path = Path[Par]
-                        document.getElementById("Location").innerHTML += Par+"/"
                     }
                 }
                 
