@@ -65,6 +65,7 @@
             if (Type != "Menu"){
                 New[Pre.length] = (Type)
             }
+            console.log(New)
 
             for (const child of document.getElementById('ButtonBar').children) {
                 setTimeout(() => { child.remove(); }, .1)
@@ -81,7 +82,7 @@
                     if (Par != "Portfolio"){
                         Path = Path[Par]
                     }
-                }console.log(New)
+                }
                 
                 if (typeof(Path) == "string"){
                     document.getElementById("MainStuff").src = "ScrollFrames/"+Path
