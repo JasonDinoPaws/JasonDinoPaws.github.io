@@ -57,7 +57,7 @@
     <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
 
     <script>
-        function ChangeSection(Type,Pre = new Array(["Portfolio"])) {
+        function ChangeSection(Type,Pre = new Array("Portfolio")) {
             New = new Array(Pre.length+(Type != "Menu" && 1 || 0))
             for (i = 0; i < Pre.length; i++){
                 New[i] = Pre[i]
