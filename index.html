@@ -65,10 +65,6 @@
                 setTimeout(() => { child.remove(); }, .1)
             }
 
-            if (Pre != "Portfolio/"){
-                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'\"\"\',\'"+Last+"\')\"><ifont size='3.5'>...</ifont></button>")
-            }
-
             $.getJSON("ButtonBar.json",function(data){
                 var Path = data
                 for (const T of Pre.split(",")) {
