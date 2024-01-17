@@ -72,6 +72,9 @@
                 setTimeout(() => { child.remove(); }, .1)
             }
 
+            if (New.length > 1) {
+                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'\"\"\',\'"+Pre+"\')\">...</button>") 
+            }
             document.getElementById("Location").innerHTML = ""
             $.getJSON("ButtonBar.json",function(data){
                 var Path = data
