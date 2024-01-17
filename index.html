@@ -55,11 +55,10 @@
     </div>
 
     <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
-        
+
     <script>
-        function ChangeSection(Type,Pre = new Int16Array(["Portfolio"])) {
+        function ChangeSection(Type,Pre = new Int16Array([Portfolio])) {
             New = new Int16Array(Pre.length+(Type != "Menu" && 1 || 0))
-            document.getElementById("Location").innerHTML = "Portfolio/"
             for (i = 0; i < Pre.length; i++){
                 New[i] = Pre[i]
                 console.log(New[i],Pre[i])
@@ -72,12 +71,13 @@
                 setTimeout(() => { child.remove(); }, .1)
             }
 
+            document.getElementById("Location").innerHTML = ""
             $.getJSON("ButtonBar.json",function(data){
                 var Path = data
                 for (const Par of New){
+                    document.getElementById("Location").innerHTML += Par+"/"
                     if (Par != "Portfolio"){
                         Path = Path[Par]
-                        document.getElementById("Location").innerHTML += Par+"/"
                     }
                 }
                 
