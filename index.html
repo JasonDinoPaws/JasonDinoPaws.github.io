@@ -59,7 +59,7 @@
     <script>
         function ChangeSection(Type = "Portfolio",Pre = "") {
             New = Pre
-            if (Type != "Portfolio" || Type != "Wordsback"){
+            if (Type != "Portfolio" && Type != "Wordsback"){
                 New += ","+Type
             }
             console.log(New)
