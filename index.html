@@ -69,7 +69,7 @@
                 for (i = 0;i < path.split(",").length-1;i++) {
                     BPath += path.split(",")[i]+","
                 }
-                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+BPath.substr(0,BPath.length-2)+"\')\">...</button>") 
+                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+BPath.substr(0,BPath.length-1)+"\')\">...</button>") 
             }
             document.getElementById("Location").innerHTML = ""
             $.getJSON("ButtonBar.json",function(data){
