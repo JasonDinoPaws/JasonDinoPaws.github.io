@@ -57,8 +57,7 @@
     <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
 
     <script>
-        function ChangeSection(Type,Pre = new Array("Portfolio")) {
-            console.log(Pre)
+        function ChangeSection(Type,Pre = new Array("Portfolio","Coding")) {
             New = new Array(Pre.length+(Type != "Menu" && 1 || 0))
             for (i = 0; i < Pre.length; i++){
                 New[i] = Pre[i]
@@ -89,7 +88,7 @@
                     document.getElementById("MainStuff").src = "ScrollFrames/"+Path
                 }else if (typeof(Path) == "object"){
                     $.each(Path, function(Button,Data){
-                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',"+New+")\">"+Button+"</button>")
+                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+New+"\')\">"+Button+"</button>")
                     });
                 }
             }); 
