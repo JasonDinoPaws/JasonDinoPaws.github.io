@@ -29,7 +29,7 @@
         }
 
         .SectionButton {
-            position: inherit;
+            position: relative;
             text-align: center;
             width: 100px;
             height: 100%;
@@ -60,8 +60,6 @@
 
     <script>
         function ChangeSection(path = "Portfolio") {
-            console.log(path)
-
             for (const child of document.getElementById('ButtonBar').children) {
                 setTimeout(() => { child.remove(); }, .1)
             }
