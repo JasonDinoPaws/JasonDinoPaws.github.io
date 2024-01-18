@@ -57,9 +57,9 @@
     <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
 
     <script>
-        function ChangeSection(Type = "Portfolio",Pre = "") {
+        function ChangeSection(Type,Pre = "Portfolio") {
             New = Pre
-            if (Type != "Portfolio" && Type != "Wordsback"){
+            if (Type != null){
                 New += ","+Type
             }
             console.log(New)
@@ -69,7 +69,7 @@
             }
 
             if (New.split(",").length > 1) {
-                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection('Wordsback',\'"+Pre+"\')\">...</button>") 
+                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection('',\'"+Pre+"\')\">...</button>") 
             }
             document.getElementById("Location").innerHTML = ""
             $.getJSON("ButtonBar.json",function(data){
