@@ -89,8 +89,7 @@
                     document.getElementById("MainStuff").src = "ScrollFrames/"+Path
                 }else if (typeof(Path) == "object"){
                     $.each(Path, function(Button,Data){
-                        console.log(New)
-                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+New+"\')\">"+Button+"</button>")
+                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',"+New+")\">"+Button+"</button>")
                     });
                 }
             }); 
