@@ -59,7 +59,7 @@
     <script>
         function ChangeSection(Type,Pre = "Portfolio") {
             New = Pre
-            if (Type != "Menu"){
+            if (Type != "Portfolio"){
                 New += ","+Type
             }
             console.log(New)
@@ -69,7 +69,7 @@
             }
 
             if (New.split(",").length > 1) {
-                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'\"\"\',\'"+Pre+"\')\">...</button>") 
+                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'\',\'"+Pre+"\')\">...</button>") 
             }
             document.getElementById("Location").innerHTML = ""
             $.getJSON("ButtonBar.json",function(data){
@@ -91,7 +91,7 @@
             }); 
 
         }
-        ChangeSection("Menu")
+        ChangeSection()
     </script>
 
 </body>
