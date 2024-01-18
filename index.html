@@ -57,24 +57,24 @@
     <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
 
     <script>
-        function ChangeSection(Type,Pre = "Portfolio") {
-            New = Pre
-            if (Type != null){
-                New += ","+Type
-            }
-            console.log(New)
+        function ChangeSection(path = "Portfolio") {
+            console.log(path)
 
             for (const child of document.getElementById('ButtonBar').children) {
                 setTimeout(() => { child.remove(); }, .1)
             }
 
-            if (New.split(",").length > 1) {
-                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection('',\'"+Pre+"\')\">...</button>") 
+            if (path.split(",").length > 1) {
+                BPath = ""
+                for (i = 0;i < path.split(",").length-1;i++) {
+                    BPath += path.split(",")[i]+","
+                }
+                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+BPath.substr(0,BPath.length-2)+"\')\">...</button>") 
             }
             document.getElementById("Location").innerHTML = ""
             $.getJSON("ButtonBar.json",function(data){
                 var Path = data
-                for (const Par of New.split(",")){
+                for (const Par of path.split(",")){
                     document.getElementById("Location").innerHTML += Par+"/"
                     if (Par != "Portfolio"){
                         Path = Path[Par]
@@ -85,7 +85,7 @@
                     document.getElementById("MainStuff").src = "ScrollFrames/"+Path
                 }else if (typeof(Path) == "object"){
                     $.each(Path, function(Button,Data){
-                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+Button+"\',\'"+New+"\')\">"+Button+"</button>")
+                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+path+","+Button+"\')\">"+Button+"</button>")
                     });
                 }
             }); 
