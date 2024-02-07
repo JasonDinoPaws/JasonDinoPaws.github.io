@@ -10,39 +10,40 @@
             background-color: rgb(43, 43, 43);
         }
         
-        .ButtonBar {
-            position: fixed;
-            bottom: .5%;
-            width: 100%;
-            height: 5%;
-            text-align: center;
-            padding: 5px;
-        }
         .RootLocation {
             position: fixed;
-            bottom: 7.25%;
+            top: 1%;
             width: 100%;
             height: 2.5%;
             text-align: center;
             color: aliceblue;
             font-size: 20px;
         }
+        .RootButton {
+            position: fixed;
+            top: 1%;
+            width: 100%;
+            height: 3.5%;
+            text-align: center;
+            color: aliceblue;
+            opacity: 0;
+        }
+
+        .ButtonBar {
+            position:absolute;
+            top: 5.5%;
+            width: 100%;
+            height: 5%;
+            text-align: center;
+        }
 
         .SectionButton {
             position: relative;
             text-align: center;
-            width: 100px;
+            width: 10%;
             height: 100%;
-            left: 0px;
             font-size: 15px;
             padding: 5px;
-        }
-        
-        .MainFrame {
-            text-align: center;
-            width: 100%;
-            height: 89%;
-            bottom: 11%;
         }
     </style>
 
@@ -53,46 +54,13 @@
 <body>
 
     <ifont class="RootLocation" id="Location">Portfolio</ifont>
-    <div class="ButtonBar" id="ButtonBar">
+    <button class="RootButton" onclick="alert('Copyed Path')"></button>
+    <div class="ButtonBar">
+        <button class="SectionButton">Hello</button>
+        <button class="SectionButton">Hello</button>
+        <button class="SectionButton">Hello</button>
+        <button class="SectionButton">Hello</button>
     </div>
-
-    <iframe src="" id="MainStuff" class="MainFrame" scrolling = auto></iframe>
-
-    <script>
-        function ChangeSection(path = "Portfolio") {
-            for (const child of document.getElementById('ButtonBar').children) {
-                setTimeout(() => { child.remove(); }, .1)
-            }
-
-            if (path.split(",").length > 1) {
-                BPath = ""
-                for (i = 0;i < path.split(",").length-1;i++) {
-                    BPath += path.split(",")[i]+","
-                }
-                $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+BPath.substr(0,BPath.length-1)+"\')\">...</button>") 
-            }
-            document.getElementById("Location").innerHTML = ""
-            $.getJSON("ButtonBar.json",function(data){
-                var Path = data
-                for (const Par of path.split(",")){
-                    document.getElementById("Location").innerHTML += Par+"/"
-                    if (Par != "Portfolio"){
-                        Path = Path[Par]
-                    }
-                }
-                
-                if (typeof(Path) == "string"){
-                    document.getElementById("MainStuff").src = "/Portfolio/ScrollFames/"+Path
-                }else if (typeof(Path) == "object"){
-                    $.each(Path, function(Button,Data){
-                        $("div").append("<button style=\"left: 0px;\" class='SectionButton' onclick=\"ChangeSection(\'"+path+","+Button+"\')\">"+Button+"</button>")
-                    });
-                }
-            }); 
-
-        }
-        ChangeSection()
-    </script>
 
 </body>
 </html>
