@@ -19,7 +19,7 @@
             text-align: center;
             color: aliceblue;
             font-size: 30px;
-  font-family: TeX;
+            font-family: TeX;
         }
         .RootButton {
             position: fixed;
@@ -38,7 +38,6 @@
             height: 35px;
             text-align: center;
         }
-
         .SectionButton {
             position: relative;
             text-align: center;
@@ -46,7 +45,16 @@
             height: 100%;
             font-size: 30px;
             font-weight: normal;
-  font-family: TeX;
+            font-family: TeX;
+        }
+
+        .MainFrame {
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            top: 80px;
+            height: inherit;
+            outline: 1;
         }
     </style>
 <title>JasonDinoPaws Portfolio</title> 
@@ -54,36 +62,34 @@
 </head>
 
 <body>
-
     <ifont class="RootLocation" id="Location">Portfolio</ifont>
-    <button class="RootButton" onclick="alert('Copyed Path')"></button>
+    <button class="RootButton" onclick="PathCopy()"></button>
     <div class="ButtonBar" id = "ButtonBar">
         <button class="SectionButton" onclick="">Hello</button>
     </div>
 
+    <iframe scrolling="true" class="MainFrame" id="InfoFrame" src="Subsites/Start.html"></iframe>
+
     <script src="Code/FunnyButton.js"></script>
 
     <script>
-        function ChangePath(path = "Portfolio"){
+        var Path = "https://jasondinopaws.github.io/Portfolio/"
+        function PathCopy(){
+            document.execCommand(Path);
+            alert('Copy Path: '+Path)
+        }
+        function ChangePath(path = "Portfolio",site = "Subsites/Start.html"){
             document.getElementById("Location").innerText = path;
+            document.getElementById("InfoFrame").scr = site
+
             const pathspit = path.split("/");
             const ButtonBar = document.getElementById("ButtonBar");
             while (ButtonBar.hasChildNodes()) {
                 ButtonBar.removeChild(ButtonBar.firstChild);
             }
 
-            // Back Button for Path
-            if (path != "Portfolio/Coding"){
-                var back = ""
-                for (a in pathspit){
-                    if (a+ 1 < pathspit.length){
-                        back += pathspit[a]
-                    }
-                }
-                ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick='ChangePath(path = "+back+")'>...</button>");
-                ButtonBar.insertAdjacentHTML('beforeend', " ");
+            // Setting Site Path 
 
-            }
 
             // Loads all Buttons/Webpages for the current path
             $.getJSON("ButtonBar.json", function(data) {
@@ -97,8 +103,8 @@
 
                 }else if (typeof(data) == "object"){
                     $.each(data, function(Sec,Data){
-                        ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick='ChangePath(path = "+(path+"/"+Sec)+")'>"+Sec+"</button>");
-                ButtonBar.insertAdjacentHTML('beforeend', " ");
+                        ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick='ChangePath(path = "+(path+"/"+Sec)+", "+Data.Site+")'>"+Sec+"</button>");
+                        ButtonBar.insertAdjacentHTML('beforeend', " ");
                     })
                 }
             })

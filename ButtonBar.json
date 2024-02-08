@@ -1,20 +1,24 @@
 {
-    "Coding":[
-        "Robox",
-        "Fish"
-    ],
+    "Site":"Subsites/Start.html",
+    "Buttons":{
+        "Coding":{
+            "Site":"Subsites/Code.html",
+            "Buttons":{}
+        },
 
-    "Modeling":{
-
-    },
-    
-    "Art":{
-
-    },
-    
-    "Music":{
-
-    },
-
-    "Socals": ""
+        "Modeling":{
+            "Site":"Subsites/Modeling.html",
+            "Buttons":{}
+        },
+        
+        "Art":{
+            "Site":"Subsites/Art.html",
+            "Buttons":{}
+        },
+        
+        "Music":{
+            "Site":"Subsites/Music.html",
+            "Buttons":{}
+        }
+    }
 }
