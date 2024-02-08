@@ -1,62 +1,8 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: rgb(43, 43, 43);
-        }
-        
-        .RootLocation {
-            position: fixed;
-            top: 2px;
-            width: 100%;
-            height: 25px;
-            text-align: center;
-            color: aliceblue;
-            font-size: 30px;
-            font-family: TeX;
-        }
-        .RootButton {
-            position: fixed;
-            top: 3px;
-            width: 100%;
-            height: 30px;
-            text-align: center;
-            color: aliceblue;
-            opacity: .25;
-        }
+    <style src="Theme.css"></style>
 
-        .ButtonBar {
-            position:fixed;
-            top: 40px;
-            width: 100%;
-            height: 35px;
-            text-align: center;
-        }
-        .SectionButton {
-            position: relative;
-            text-align: center;
-            width:max-content;
-            height: 100%;
-            font-size: 30px;
-            font-weight: normal;
-            font-family: TeX;
-        }
-
-        .MainFrame {
-            position: absolute;
-            width: 100%;
-            left: 0px;
-            top: 80px;
-            height: inherit;
-            outline: 1;
-        }
-    </style>
 <title>JasonDinoPaws Portfolio</title> 
 
 </head>
@@ -64,6 +10,7 @@
 <body>
     <ifont class="RootLocation" id="Location">Portfolio</ifont>
     <button class="RootButton" onclick="PathCopy()"></button>
+    
     <div class="ButtonBar" id = "ButtonBar">
         <button class="SectionButton" onclick="">Hello</button>
     </div>
