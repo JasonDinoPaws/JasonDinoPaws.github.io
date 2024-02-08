@@ -98,13 +98,14 @@
 
                 }else if (typeof(data) == "object"){
                     $.each(data, function(Sec,Data){
-                        ButtonBar.appendChild("<button class='SectionButton' onclick='ChangePath(path = "+(path+"/"+Sec)+")'>"+Sec+"</button>");
+                        //ButtonBar.appendChild("<button class='SectionButton' onclick='ChangePath(path = "+(path+"/"+Sec)+")'>"+Sec+"</button>");
                     })
                 }
             })
 
-            // Funny Button\
-            ButtonBar.appendChild("<button class='SectionButton' id='FunnyButton'><img src='https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/30px-Trollface_non-free.png'/></button>");
+            // Funny Button
+            document.createElement("button")
+            //ButtonBar.appendChild("<button class='SectionButton' id='FunnyButton'><img src='https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/30px-Trollface_non-free.png'/></button>");
         }
 
         ChangePath();
