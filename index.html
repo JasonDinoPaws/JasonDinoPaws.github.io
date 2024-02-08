@@ -18,14 +18,15 @@
 
     <script src="Code/FunnyButton.js"></script>
 
+    <p style="opacity: 1;" id="CopyPath">https://jasondinopaws.github.io/Portfolio/</p>
     <script>
-        var Path = "https://jasondinopaws.github.io/Portfolio/"
         function PathCopy(){
-            navigator.clipboard.writeText(Path);
-            alert('Copy Path: '+Path)
+            var CyPa = document.getElementById("CopyPath")
+            CyPa.select();
+            navigator.clipboard.writeText(CyPa.value)
+            alert('Copy Path: '+CyPa.value)
         }
         function ChangePath(path = "Portfolio",site = "Subsites/Start.html"){
-            console.log(path);
             document.getElementById("Location").innerText = path;
             document.getElementById("InfoFrame").src = site
 
