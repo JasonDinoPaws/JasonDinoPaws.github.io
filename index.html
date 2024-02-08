@@ -99,10 +99,10 @@
                     }
                 }
 
-                if (typeof(data) == "string"){
+                if (data.Buttons == null){
 
-                }else if (typeof(data) == "object"){
-                    $.each(data, function(Sec,Data){
+                }else{
+                    $.each(data.Buttons, function(Sec,Data){
                         ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick='ChangePath(path = "+(path+"/"+Sec)+", "+Data.Site+")'>"+Sec+"</button>");
                         ButtonBar.insertAdjacentHTML('beforeend', " ");
                     })
