@@ -70,8 +70,13 @@
     <script>
         function ChangePath(path = "Portfolio/"){
             document.getElementById("Location").innerText = path;
+
+            $.getJSON("ButtonBar.json", function(data) {
+                alert(path.split("/"));
+            })
         }
-        ChangePath()
+
+        ChangePath();
     </script>
 
 </body>
