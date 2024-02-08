@@ -104,7 +104,7 @@
 
                 }else{
                     $.each(data.Buttons, function(Sec,Data){
-                        ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick='ChangePath(path = "+(path+"/"+Sec)+", "+Data.Site+")'>"+Sec+"</button>");
+                        ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick='ChangePath("+(path+"/"+Sec)+", "+Data.Site+")'>"+Sec+"</button>");
                         ButtonBar.insertAdjacentHTML('beforeend', " ");
                     })
                 }
