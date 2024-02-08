@@ -1,3 +1,1 @@
-function Funny(){
-    print("Funny");
-}
+print("Funny");
