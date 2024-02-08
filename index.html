@@ -62,23 +62,41 @@
         <button class="SectionButton">Hello</button>
         <button class="SectionButton">Hello</button>
         <button class="SectionButton">Hello</button>
-        <button class="SectionButton" id="FunnyButton"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/30px-Trollface_non-free.png"/></button>
     </div>
 
     <script src="Code/FunnyButton.js"></script>
 
     <script>
-        function ChangePath(path = "Portfolio/Coding"){
+        function ChangePath(path = "Portfolio"){
             document.getElementById("Location").innerText = path;
+            const pathspit = path.split("/");
+            const ButtonBar = document.getElementsByClassName("ButtonBar");
+            ButtonBar.getElementsByClassName("SectionButton").forEach(b => b.remove());
 
-            $.getJSON("ButtonBar.json", function(data) {
-                for (a in path.split("/")){
-                    if (path.split("/")[a] != "Portfolio"){
-                        data = data[path.split("/")[a]]
+            // Back Button for Path
+            if (path != "Portfolio"){
+                var back = ""
+                for (a in pathspit){
+                    if (a+ 1 < pathspit.length){
+                        back += pathspit[a]
                     }
                 }
-                alert(data)
+
+            }
+
+            // Loads all Buttons/Webpages for the current path
+            $.getJSON("ButtonBar.json", function(data) {
+                for (a in pathspit){
+                    if (pathspit[a] != "Portfolio"){
+                        data = data[pathspit[a]]
+                    }
+                }
+
+
             })
+
+            // Funny Button
+            ButtonBar.appendChild("<button class='SectionButton' id='FunnyButton'><img src='https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/30px-Trollface_non-free.png'/></button>");
         }
 
         ChangePath();
