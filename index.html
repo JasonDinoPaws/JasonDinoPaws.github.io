@@ -1,7 +1,6 @@
-<html>
+<html class="body">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <style type=".Theme"></style>
 
 <title>JasonDinoPaws Portfolio</title> 
 
@@ -28,7 +27,7 @@
         function ChangePath(path = "Portfolio",site = "Subsites/Start.html"){
             console.log(path);
             document.getElementById("Location").innerText = path;
-            document.getElementById("InfoFrame").scr = site
+            document.getElementById("InfoFrame").src = site
 
             const pathspit = path.split("/");
             const ButtonBar = document.getElementById("ButtonBar");
