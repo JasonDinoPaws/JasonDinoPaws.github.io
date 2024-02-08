@@ -67,7 +67,7 @@
         function ChangePath(path = "Portfolio"){
             document.getElementById("Location").innerText = path;
             const pathspit = path.split("/");
-            const ButtonBar = $.getElementById("ButtonBar");
+            const ButtonBar = document.getElementById("ButtonBar");
             while (ButtonBar.hasChildNodes()) {
                 ButtonBar.removeChild(ButtonBar.firstChild);
             }
