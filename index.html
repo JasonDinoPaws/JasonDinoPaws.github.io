@@ -68,13 +68,16 @@
     <script src="Code/FunnyButton.js"></script>
 
     <script>
-        function ChangePath(path = "Portfolio/"){
+        function ChangePath(path = "Portfolio/Coding"){
             document.getElementById("Location").innerText = path;
 
             $.getJSON("ButtonBar.json", function(data) {
                 for (a in path.split("/")){
-                    alert(path.split("/")[a]);
+                    if (path.split("/")[a] != "Portfolio"){
+                        data = data[path.split("/")[a]]
+                    }
                 }
+                alert(data)
             })
         }
 
