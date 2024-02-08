@@ -75,10 +75,11 @@
     <script>
         var Path = "https://jasondinopaws.github.io/Portfolio/"
         function PathCopy(){
-            document.execCommand(Path);
+            navigator.clipboard.writeText(Path);
             alert('Copy Path: '+Path)
         }
         function ChangePath(path = "Portfolio",site = "Subsites/Start.html"){
+            console.log(path);
             document.getElementById("Location").innerText = path;
             document.getElementById("InfoFrame").scr = site
 
