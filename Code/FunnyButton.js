@@ -1,0 +1,3 @@
+function Funny(){
+    print("Funny");
+}
