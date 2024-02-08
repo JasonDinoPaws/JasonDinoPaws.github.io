@@ -58,9 +58,6 @@
     <ifont class="RootLocation" id="Location">Portfolio</ifont>
     <button class="RootButton" onclick="alert('Copyed Path')"></button>
     <div class="ButtonBar">
-        <button class="SectionButton">Hello</button>
-        <button class="SectionButton">Hello</button>
-        <button class="SectionButton">Hello</button>
         <button class="SectionButton" onclick="">Hello</button>
     </div>
 
@@ -72,7 +69,7 @@
             const pathspit = path.split("/");
             const ButtonBar = document.getElementsByClassName("ButtonBar");
             for (i = 0; i <ButtonBar.length; i++){
-                ButtonBar[i].remove();
+               // ButtonBar.removeChild(ButtonBar.item[i]);
             }
 
             // Back Button for Path
@@ -104,7 +101,7 @@
             })
 
             // Funny Button
-            ButtonBar.insertAdjacentHTML('end', "<button class='SectionButton' id='FunnyButton'><img src='https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/30px-Trollface_non-free.png'/></button>");
+            ButtonBar.append("<button class='SectionButton' id='FunnyButton'><img src='https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/30px-Trollface_non-free.png'/></button>");
         }
 
         ChangePath();
