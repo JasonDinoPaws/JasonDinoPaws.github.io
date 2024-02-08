@@ -1,10 +1,6 @@
 {
     "Coding":{
-        "Roblox":{
-            "Games":"RoGames.html",
-            "Plugins":"RoPlugins.html",
-            "Comission":"RoComission.html"
-        }
+
     },
 
     "Modeling":{
@@ -19,5 +15,5 @@
 
     },
 
-    "About":"AboutMe.html"
+    "Socals": ""
 }

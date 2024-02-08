@@ -62,13 +62,16 @@
         <button class="SectionButton">Hello</button>
         <button class="SectionButton">Hello</button>
         <button class="SectionButton">Hello</button>
-        <button class="SectionButton" id="FunnyButton"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/"+SectionButton.font-size+"-Trollface_non-free.png"/></button>
+        <button class="SectionButton" id="FunnyButton"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/30px-Trollface_non-free.png"/></button>
     </div>
 
     <script src="Code/FunnyButton.js"></script>
 
     <script>
-
+        function ChangePath(path = "Portfolio/"){
+            document.getElementById("Location").innerText = path;
+        }
+        ChangePath()
     </script>
 
 </body>
