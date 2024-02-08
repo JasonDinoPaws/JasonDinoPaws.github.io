@@ -69,7 +69,7 @@
             const pathspit = path.split("/");
             const ButtonBar = document.getElementsByClassName("ButtonBar");
             for (i = 0; i <ButtonBar.length; i++){
-               // ButtonBar.removeChild(ButtonBar.item[i]);
+                ButtonBar.removeChild(ButtonBar.firstElementChild);
             }
 
             // Back Button for Path
