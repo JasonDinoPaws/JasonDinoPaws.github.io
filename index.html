@@ -57,7 +57,7 @@
 
     <ifont class="RootLocation" id="Location">Portfolio</ifont>
     <button class="RootButton" onclick="alert('Copyed Path')"></button>
-    <div class="ButtonBar">
+    <div class="ButtonBar" id = "ButtonBar">
         <button class="SectionButton" onclick="">Hello</button>
     </div>
 
@@ -67,9 +67,9 @@
         function ChangePath(path = "Portfolio"){
             document.getElementById("Location").innerText = path;
             const pathspit = path.split("/");
-            const ButtonBar = document.getElementsByClassName("ButtonBar");
-            for (i = 0; i <ButtonBar.length; i++){
-                ButtonBar.removeChild(ButtonBar.firstElementChild);
+            const ButtonBar = $.getElementById("ButtonBar");
+            while (ButtonBar.hasChildNodes()) {
+                ButtonBar.removeChild(ButtonBar.firstChild);
             }
 
             // Back Button for Path
