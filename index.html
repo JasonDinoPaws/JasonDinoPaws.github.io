@@ -72,7 +72,7 @@
             document.getElementById("Location").innerText = path;
 
             $.getJSON("ButtonBar.json", function(data) {
-                for (String a ; path.split("/")){
+                for (a in path.split("/")){
                     alert(a);
                 }
             })
