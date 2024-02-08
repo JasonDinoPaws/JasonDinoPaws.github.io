@@ -1,1 +1,3 @@
-print("Funny");
+function Start(){
+    return "funny"
+}
