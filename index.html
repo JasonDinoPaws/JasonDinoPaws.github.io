@@ -95,13 +95,13 @@
 
                 }else if (typeof(data) == "object"){
                     $.each(data, function(Sec,Data){
-                        ButtonBar.append("<button class='SectionButton' onclick='ChangePath(path = "+(path+"/"+Sec)+")'>"+Sec+"</button>");
+                        ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick='ChangePath(path = "+(path+"/"+Sec)+")'>"+Sec+"</button>");
                     })
                 }
             })
 
             // Funny Button
-            ButtonBar.append("<button class='SectionButton' id='FunnyButton'><img src='https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/30px-Trollface_non-free.png'/></button>");
+            ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' id='FunnyButton'><img src='https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/30px-Trollface_non-free.png'/></button>");
         }
 
         ChangePath();
