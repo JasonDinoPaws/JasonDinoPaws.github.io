@@ -18,12 +18,13 @@
 
     <script src="Code/FunnyButton.js"></script>
 
-    <p style="opacity: 0;" id="CopyPath">https://jasondinopaws.github.io/Portfolio/</p>
+    <input style="opacity: 0;" id="CopyPath">https://jasondinopaws.github.io/Portfolio/</input>
     <script>
         function PathCopy(){
             var CyPa = document.getElementById("CopyPath")
             CyPa.select();
-            navigator.clipboard.writeText(CyPa.value)
+            navigator.clipboard.writeText(CyPa.value);
+            CyPa.unselect();
             alert('Copy Path: '+CyPa.value)
         }
         function ChangePath(path = "Portfolio",site = "Subsites/Start.html"){
