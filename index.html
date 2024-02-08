@@ -95,8 +95,8 @@
             // Loads all Buttons/Webpages for the current path
             $.getJSON("ButtonBar.json", function(data) {
                 for (a in pathspit){
-                    if (a > 0)
-                        data = data[pathspit[a]]
+                    if (a > 0 && data.Buttons != null)
+                        data = data.Buttons[pathspit[a]]
                 }
 
                 if (data.Buttons == null){
