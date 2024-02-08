@@ -73,14 +73,15 @@
             }
 
             // Back Button for Path
-            if (path != "Portfolio"){
+            if (path != "Portfolio/Coding"){
                 var back = ""
                 for (a in pathspit){
                     if (a+ 1 < pathspit.length){
                         back += pathspit[a]
                     }
                 }
-                        ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick='ChangePath(path = "+back+")'>..</button>");
+                ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick='ChangePath(path = "+back+")'>..</button>");
+                ButtonBar.insertAdjacentHTML('beforeend', "whitespace");
 
             }
 
@@ -97,6 +98,7 @@
                 }else if (typeof(data) == "object"){
                     $.each(data, function(Sec,Data){
                         ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick='ChangePath(path = "+(path+"/"+Sec)+")'>"+Sec+"</button>");
+                ButtonBar.insertAdjacentHTML('beforeend', "whitespace");
                     })
                 }
             })
