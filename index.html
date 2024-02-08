@@ -71,7 +71,9 @@
             document.getElementById("Location").innerText = path;
             const pathspit = path.split("/");
             const ButtonBar = document.getElementsByClassName("ButtonBar");
-            ButtonBar.getElementsByClassName("SectionButton").forEach(b => b.remove());
+            ButtonBar.array.forEach(element => {
+                element.remove();
+            });
 
             // Back Button for Path
             if (path != "Portfolio"){
