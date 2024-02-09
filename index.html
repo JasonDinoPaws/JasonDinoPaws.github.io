@@ -52,21 +52,20 @@
 
 
                 for (a in pathspit){
-                    if (pathspit[a].length > 0){
+                    if (pathspit[a].length() > 0){
 
                         if (a > 0 && data.Buttons != null)
                             data = data.Buttons[pathspit[a]]
 
                         if (a+1 < pathspit.length){
-                            backpath += pathspit[a]+"/"
+                            backpath += pathspit[a]+(a+1 < pathspit.length-1 && "/" || "")
                             Backsite = data.Site
                         }
-
                     }
                 }
 
                 // Create Back Path Button
-                if (data.Site != "Subsites/Start.html"){
+                if (pathspit.length > 1){
                     ButtonBar.insertAdjacentHTML('beforeend', "<button class='SectionButton' onclick=\"ChangePath(\'"+(backpath)+"\', \'"+Backsite+"\')\">...</button>");
                     ButtonBar.insertAdjacentHTML('beforeend', " ");
                 }
