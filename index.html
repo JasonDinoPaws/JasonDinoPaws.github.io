@@ -86,7 +86,7 @@
         }
 
         if (localStorage.getItem("Redirrection").length > 0){
-            ChangePath("Portfolio/"+localStorage.getItem("Redirrection"),localStorage.removeItem("Site"));
+            ChangePath("Portfolio/"+localStorage.getItem("Redirrection"),"Subsites/"+localStorage.removeItem("Site"));
             localStorage.removeItem("Redirrection");
             localStorage.removeItem("Site");
         } else
