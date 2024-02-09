@@ -52,8 +52,3 @@ body {
     height: inherit;
     outline: 1;
 }
-
-.SiteRe {
-    http-equiv: "refresh";
-    content: "delay_time; URL=https://jasondinopaws.github.io/Portfolio/"
-}
