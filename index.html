@@ -22,8 +22,12 @@
         var CopyPath = "https://jasondinopaws.github.io/Portfolio/";
         function PathCopy(){
             try {
-                await navigator.clipboard.writeText(CopyPath);
-                alert('Copy Path: '+CopyPath);
+                navigator.clipboard.writeText(CopyPath);
+                document.getElementById("Location").innerText = "Copyed Path";
+                setTimeout(() => {
+                    ChangePath(path = "Portfolio",site = "Subsites/Start.html");
+                }, 5000);
+                //alert('Copy Path: '+CopyPath);
             } catch (error) {
                 alert("Couldn' Copy Path: "+CopyPath);
             }
