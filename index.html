@@ -52,7 +52,7 @@
 
 
                 for (a in pathspit){
-                    if (pathspit[a].length() > 0){
+                    if (pathspit[a].length > 0){
 
                         if (a > 0 && data.Buttons != null)
                             data = data.Buttons[pathspit[a]]
@@ -61,7 +61,7 @@
                             backpath += pathspit[a]+"/"
                             Backsite = data.Site
                         }
-                        
+
                     }
                 }
 
