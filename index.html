@@ -21,13 +21,14 @@
     <script>
         var Path = "https://jasondinopaws.github.io/Portfolio/";
         function PathCopy(){
-            clipboard.writeText(Path);
+            window.clipboard.writeText(Path);
             alert('Copy Path: '+Path);
         }
 
         function ChangePath(path = "Portfolio",site = "Subsites/Start.html"){
             document.getElementById("Location").innerText = path;
             document.getElementById("InfoFrame").src = site
+            Path = "https://jasondinopaws.github.io/Portfolio/"+(site != "Subsites/Start.html" && site || "")
 
             const pathspit = path.split("/");
             const ButtonBar = document.getElementById("ButtonBar");
