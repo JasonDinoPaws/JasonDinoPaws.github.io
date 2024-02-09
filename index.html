@@ -21,9 +21,12 @@
     <script>
         var CopyPath = "https://jasondinopaws.github.io/Portfolio/";
         function PathCopy(){
-            navigator.clipboard.write(CopyPath);
-            navigator.clipboard.writeText(CopyPath);
-            alert('Copy Path: '+CopyPath);
+            try {
+                await navigator.clipboard.writeText(CopyPath);
+                alert('Copy Path: '+CopyPath);
+            } catch (error) {
+                alert("Couldn' Copy Path: "+CopyPath);
+            }
         }
 
         function ChangePath(path = "Portfolio",site = "Subsites/Start.html"){
