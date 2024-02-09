@@ -19,16 +19,17 @@
     <script src="Code/FunnyButton.js"></script>
 
     <script>
-        var Path = "https://jasondinopaws.github.io/Portfolio/";
+        var CopyPath = "https://jasondinopaws.github.io/Portfolio/";
         function PathCopy(){
-            window.clipboard.writeText(Path);
-            alert('Copy Path: '+Path);
+            navigator.clipboard.write(CopyPath);
+            navigator.clipboard.writeText(CopyPath);
+            alert('Copy Path: '+CopyPath);
         }
 
         function ChangePath(path = "Portfolio",site = "Subsites/Start.html"){
             document.getElementById("Location").innerText = path;
             document.getElementById("InfoFrame").src = site
-            Path = "https://jasondinopaws.github.io/Portfolio/"+(site != "Subsites/Start.html" && site || "")
+            CopyPath = "https://jasondinopaws.github.io/Portfolio/"+(site != "Subsites/Start.html" && site || "")
 
             const pathspit = path.split("/");
             const ButtonBar = document.getElementById("ButtonBar");
