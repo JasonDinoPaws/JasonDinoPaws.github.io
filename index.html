@@ -20,25 +20,24 @@
 
     <script>
         var SitePath = "https://jasondinopaws.github.io/Portfolio/";
-        var Path = "";
         function PathCopy(){
+            const PathText =  document.getElementById("Location").innerText ;
             try {
                 navigator.clipboard.writeText(SitePath);
                 document.getElementById("Location").innerText = "Copyed Path";
             } catch (error) {
                 document.getElementById("Location").innerText = "Failed to Copy Path";
             }
-            
+
             setTimeout(() => {
-                ChangePath(Path,SitePath.split("Portfolio/")[1]);
+                document.getElementById("Location").innerText = PathText;
             }, 2500);
         }
 
         function ChangePath(path = "Portfolio",site = "Subsites/Start.html"){
             document.getElementById("Location").innerText = path;
             document.getElementById("InfoFrame").src = site
-            Path = path
-            CopyPath = "https://jasondinopaws.github.io/Portfolio/"+(site != "Subsites/Start.html" && site || "")
+            SitePath = "https://jasondinopaws.github.io/Portfolio/"+(site != "Subsites/Start.html" && site || "")
 
             const pathspit = path.split("/");
             const ButtonBar = document.getElementById("ButtonBar");
