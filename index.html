@@ -85,7 +85,7 @@
             ButtonBar.insertAdjacentHTML('beforeend', " ");
         }
 
-        if (localStorage.getItem("Redirrection").length > 0){
+        if (localStorage.getItem("Redirrection")){
             ChangePath("Portfolio/"+localStorage.getItem("Redirrection"),"Subsites/"+localStorage.removeItem("Site"));
             localStorage.removeItem("Redirrection");
             localStorage.removeItem("Site");
