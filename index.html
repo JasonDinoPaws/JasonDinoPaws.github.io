@@ -85,7 +85,10 @@
             ButtonBar.insertAdjacentHTML('beforeend', " ");
         }
 
-        alert(localStorage.getItem("Redirrection"));
+        if (localStorage.getItem("Redirrection").length > 0){
+            alert(localStorage.getItem("Redirrection"));
+            localStorage.removeItem("Redirrection");
+        }
         ChangePath();
     </script>
 
