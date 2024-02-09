@@ -86,10 +86,11 @@
         }
 
         if (localStorage.getItem("Redirrection").length > 0){
-            alert(localStorage.getItem("Redirrection"));
+            ChangePath("Portfolio/"+localStorage.getItem("Redirrection"),localStorage.removeItem("Site"));
             localStorage.removeItem("Redirrection");
-        }
-        ChangePath();
+            localStorage.removeItem("Site");
+        } else
+            ChangePath();
     </script>
 
 </body>
