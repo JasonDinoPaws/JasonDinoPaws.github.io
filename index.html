@@ -19,23 +19,25 @@
     <script src="Code/FunnyButton.js"></script>
 
     <script>
-        var CopyPath = "https://jasondinopaws.github.io/Portfolio/";
+        var SitePath = "https://jasondinopaws.github.io/Portfolio/";
+        var Path = "";
         function PathCopy(){
             try {
-                navigator.clipboard.writeText(CopyPath);
+                navigator.clipboard.writeText(SitePath);
                 document.getElementById("Location").innerText = "Copyed Path";
-                setTimeout(() => {
-                    ChangePath(path = "Portfolio",site = "Subsites/Start.html");
-                }, 5000);
-                //alert('Copy Path: '+CopyPath);
             } catch (error) {
-                alert("Couldn' Copy Path: "+CopyPath);
+                document.getElementById("Location").innerText = "Failed to Copy Path";
             }
+            
+            setTimeout(() => {
+                ChangePath(Path,SitePath.split("Portfolio/")[1]);
+            }, 2500);
         }
 
         function ChangePath(path = "Portfolio",site = "Subsites/Start.html"){
             document.getElementById("Location").innerText = path;
             document.getElementById("InfoFrame").src = site
+            Path = path
             CopyPath = "https://jasondinopaws.github.io/Portfolio/"+(site != "Subsites/Start.html" && site || "")
 
             const pathspit = path.split("/");
