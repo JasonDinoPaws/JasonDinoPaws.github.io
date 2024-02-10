@@ -4,9 +4,11 @@
         <link rel="stylesheet" href="../Theme.css">
 
         <script>
-            localStorage.setItem("RedirPath","Coding")
+            if (window.location == window.parent.location) {
+                localStorage.setItem("RedirPath","Coding")
+                document.head.append("<meta http-equiv='refresh' content='0; URL=https://jasondinopaws.github.io/Portfolio/'/>");
+            }
         </script>
-        <meta http-equiv="refresh" content="0; URL=https://jasondinopaws.github.io/Portfolio/"/>
     </head>
     <body>
         <ifont class="RootLocation" id="Location">Coding</ifont>

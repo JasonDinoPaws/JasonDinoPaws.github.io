@@ -5,9 +5,11 @@
 
         
         <script>
-            localStorage.setItem("RedirPath","")
+            if (window.location == window.parent.location) {
+                localStorage.setItem("RedirPath","")
+                document.head.append("<meta http-equiv='refresh' content='0; URL=https://jasondinopaws.github.io/Portfolio/'/>");
+            }
         </script>
-        <meta http-equiv="refresh" content="0; URL=https://jasondinopaws.github.io/Portfolio/"/>
     <body>
         <ifont class="RootLocation" id="Location">Start</ifont>
     </body>
