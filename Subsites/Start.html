@@ -5,7 +5,7 @@
 
         
         <script>
-            if (window.location == window.parent.location) {
+            if (window.location !== window.parent.location) {
                 localStorage.setItem("RedirPath","")
                 document.head.append("<meta http-equiv='refresh' content='0; URL=https://jasondinopaws.github.io/Portfolio/'/>");
             }
