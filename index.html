@@ -85,10 +85,10 @@
             ButtonBar.insertAdjacentHTML('beforeend', " ");
         }
 
-        if (localStorage.getItem("RedirPath")){
+        if (localStorage.getItem("RedirPath") != ""){
             console.log(localStorage.getItem("RedirPath"))
             ChangePath("Portfolio/"+localStorage.getItem("RedirPath"));
-            localStorage.removeItem("RedirPath");
+            localStorage.setItem("RedirPath","")
         } else
             ChangePath();
     </script>
