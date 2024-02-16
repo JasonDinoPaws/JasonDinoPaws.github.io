@@ -1,6 +1,5 @@
-var button = document.getElementById("FunnyButton");
-button.addEventListener("click", Start);
+var ButtonDoc = document.getElementById("ButtonBar");
 
-function Start() {
-    alert("Funny Mode Activated");
-}
+var buttoncheck = new MutationObserver(function(m){
+    console.log(m);
+})
