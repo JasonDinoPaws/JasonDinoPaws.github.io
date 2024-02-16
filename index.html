@@ -62,7 +62,7 @@
                     }
                 }
             document.getElementById("InfoFrame").src = data.Site
-            SitePath = "https://jasondinopaws.github.io/Portfolio/"+(data.Site != "Subsites/Start.html" && data.Site || "")
+            SitePath = window.location+(data.Site != "Subsites/Start.html" && data.Site || "")
 
                 // Create Back Path Button
                 if (pathspit.length > 1){
@@ -91,6 +91,8 @@
             localStorage.setItem("RedirPath","")
         } else
             ChangePath();
+
+        console.log(window.location);
     </script>
 
 </body>
