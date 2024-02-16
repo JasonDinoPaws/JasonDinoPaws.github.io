@@ -1,5 +1,5 @@
 var ButtonDoc = document.getElementById("ButtonBar");
 
-new MutationObserver(function(m){
-   console.log(ButtonDoc.childElementCount);
+ButtonDoc.addEventListener("DOWNodeInserted", function(e){
+    console.log(e);
 })
