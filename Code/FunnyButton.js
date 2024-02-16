@@ -1,5 +1,5 @@
 var ButtonDoc = document.getElementById("ButtonBar");
 
-var buttoncheck = new MutationObserver(function(m){
-    console.log(m);
+new MutationObserver(function(m){
+   console.log(ButtonDoc.childElementCount);
 })
